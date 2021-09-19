@@ -2,7 +2,7 @@
 
 ## Endpoints
 
-All requests should include `api_key`. For testing purposes, you can use `"api_key": "test"`.
+All requests should include `api_key`. For testing purposes, you can use `"api_key": "test"`. To receive your personal API key, [contact administrator](mailto:russo.programmisto@gmail.com).
 
 ### `GET` /api/zip/check
 
