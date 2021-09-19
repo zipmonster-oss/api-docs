@@ -2,6 +2,8 @@
 
 ## Endpoints
 
+All requests should include `api_key`. For testing purposes, you can use `"api_key": "test"`.
+
 ### `GET` /api/zip/check
 
 Returns information about zip code.
@@ -10,7 +12,8 @@ Request example:
 
 ```json
 {
-    "zip": "91360"
+    "zip": "91360",
+    "api_key": "test"
 }
 ```
 
