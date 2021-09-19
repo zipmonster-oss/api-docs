@@ -31,3 +31,54 @@ Response example:
     "city": "Thousand Oaks"
 }
 ```
+
+----
+
+### `GET` /api/address/check
+
+Verifies if address exists and returns full information about it.
+
+Request example:
+
+```json
+{
+    "full_address": "1600 Amphitheatre Parkway Mountain View, CA 94043",
+    "api_key": "test"
+}
+```
+
+Alternatively, you can send JSON payload that includes separate elements of the address:
+
+```json
+{
+    "line_1": "1600 Amphitheatre Parkway",
+    "city": "Mountain View",
+    "state": "CA",
+    "zip": "94043",
+    "api_key": "test"
+}
+```
+
+In both cases you will receive the same response:
+
+```json
+{
+    "exists": true,
+    "address": {
+        "line_1": "1600 Amphitheatre Pkwy",
+        "street_number": "1600",
+        "street_name": "Amphitheatre",
+        "street_suffix": "Pkwy",
+        "city": "Mountain View",
+        "county": "Santa Clara",
+        "state": {
+            "name": "California",
+            "abbreviation": "Calif.",
+            "postal_code": "CA"
+        },
+        "zip": "94043"
+    }
+}
+```
+
+Btw, even if your request doesn't include zip code, ZipMonster will find it automatically and return in response! So you can simply send `"1600 Amphitheatre Parkway Mountain View CA"`, zip code is an optional thing here.
