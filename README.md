@@ -30,7 +30,11 @@ Response example:
         "postal_code": "CA"
     },
     "county": "Ventura",
-    "city": "Thousand Oaks"
+    "city": "Thousand Oaks",
+    "location": {
+        "latitude": 34.2090940366232,
+        "longitude": -118.875059125606
+    }
 }
 ```
 
