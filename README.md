@@ -40,6 +40,49 @@ Response example:
 
 ----
 
+### `GET` /api/zip/by-ip-address
+
+Finds zip code by IP address and returns full information.
+
+Request example *(will use client's IP address)*:
+
+```json
+{
+    "api_key": "test"
+}
+```
+
+Another request example *(will use value from* `ip_address` *parameter)*:
+
+```json
+{
+    "api_key": "test",
+    "ip_address": "161.185.160.20"
+}
+```
+
+Response example:
+
+```json
+{
+    "ip_address": "161.185.160.20",
+    "zip": "11221",
+    "state": {
+        "name": "New York",
+        "abbreviation": "N.Y.",
+        "postal_code": "NY"
+    },
+    "county": "Kings",
+    "city": "Brooklyn",
+    "location": {
+        "latitude": 40.6910642109398,
+        "longitude": -73.9284754630217
+    }
+}
+```
+
+----
+
 ### `GET` /api/address/check
 
 Verifies if address exists and returns full information about it.
@@ -88,3 +131,4 @@ In both cases you will receive the same response:
 ```
 
 Btw, even if your request doesn't include zip code, ZipMonster will find it automatically and return in response! So you can simply send `"1600 Amphitheatre Parkway Mountain View CA"`, zip code is an optional thing here.
+
