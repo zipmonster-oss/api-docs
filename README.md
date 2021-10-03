@@ -56,8 +56,8 @@ Another request example *(will use value from* `ip_address` *parameter)*:
 
 ```json
 {
-    "api_key": "test",
-    "ip_address": "161.185.160.20"
+    "ip_address": "161.185.160.20",
+    "api_key": "test"
 }
 ```
 
@@ -77,6 +77,42 @@ Response example:
     "location": {
         "latitude": 40.6910642109398,
         "longitude": -73.9284754630217
+    }
+}
+```
+
+----
+
+### `GET` /api/zip/by-location
+
+Finds zip code by coordinates (latitude and longitude).
+
+Request example:
+
+```json
+{
+    "latitude": 40.748817,
+    "longitude": -73.985428,
+    "api_key": "test"
+}
+```
+
+Response example:
+
+```json
+{
+    "distance_to_zip_center": 658.1025025543221,
+    "zip": "10119",
+    "state": {
+        "name": "New York",
+        "abbreviation": "N.Y.",
+        "postal_code": "NY"
+    },
+    "county": "New York",
+    "city": "New York",
+    "location": {
+        "latitude": 40.7503097973899,
+        "longitude": -73.9929787985656
     }
 }
 ```
